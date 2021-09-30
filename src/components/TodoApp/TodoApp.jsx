@@ -13,7 +13,7 @@ const TodoApp = () => {
     return ( 
         <div className={styles.container}>
          <TodoForm addTodoHandler={addTodoHandler}/>
-         <TodoList/>
+         <TodoList todos={todos}/>
     
             
         </div>
