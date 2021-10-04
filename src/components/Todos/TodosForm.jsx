@@ -1,26 +1,36 @@
-import styles from './TodoForm.module.css';
-import { useState } from 'react';
+import  './TodoForm.css';
+import { useState,useEffect,useRef } from 'react';
+
+
 
 const TodoForm = (props) => {
-    const [input,setInput]=useState('');
-    const changeHandler=(e)=>{
+    const [input,setInput]=useState(props.edit? props.edit.text :"");
+       const changeHandler=(e)=>{
         setInput(e.target.value)
     }
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+      inputRef.current.focus();
+    }, []);
+
     const submitHandler=(event)=>{
       event.preventDefault();
         if(!input){
             alert('add todos ')
             return;
         }
-      props.addTodoHandler(input);
+      props.submitTodo(input);
+      
       setInput("");
         
     };
     return ( 
         <form onSubmit={submitHandler}>
-            <input type="text" placeholder='what would you like to do?' value={input} 
-            onChange={changeHandler}/>
-            <button type='submit'>Add Todo</button>
+           <input type="text" placeholder={props.edit?"updated Todo":'what would you like to do?'} value={input} 
+            onChange={changeHandler} ref={inputRef}/>
+            <button className={`btnF  ${props.edit ? "updateTodo":"addTodo"}`} type='submit'>{props.edit?"update":"Add Todo"}</button>
+           
       </form>
      );
 }

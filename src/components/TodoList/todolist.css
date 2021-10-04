@@ -15,9 +15,6 @@ p{
     display: flex;
     justify-content:flex-end;
     align-items: center;
-    background-color:#f6f5fb ;
-    border:1px solid #6D28D9;
-    border-radius: 3px;
     padding: 0px;
     box-sizing: border-box;
     text-decoration: none;
@@ -27,16 +24,18 @@ p{
     display: flex;
     align-items: center;
 }
-.button{
-   
-    border-radius: 0;
+.btn{
+   background-color: #f3f2fa;
+    border: 1px solid #6D28D9;
+    border-radius: 3px;
     margin: 0;
-    border-left: 1px solid #6D28D9;
+    margin-right: 1px;
+    padding: 3px 5px;
 
 
 } 
  .todo {
-    width: 15rem;
+    width: 10rem;
     font-size: 16px;
     margin-left: 10px;
   
@@ -48,4 +47,9 @@ p{
   
     text-decoration: line-through;
     color: #ccc;
+}
+.remove{
+    color: rgb(248, 93, 93);
+    background-color: rgb(250, 242, 242);
+    border: 1px solid  rgb(248, 93, 93) ;
 }

@@ -28,12 +28,27 @@ input{
 
 }
 input:focus{
-    border:1px solid #5B21B6; 
+    border:2px solid #5B21B6; 
 }
-button{
+.btnF{
     border-radius: 5px;
-    background-color:#a888f3;
     border:1px solid #a888f3;
+    padding: 5px;
+    margin-left: 10px;
+}
+.addTodo{
+    color:#cec5e7 ;
+    background-color:#403161
+}
+.updateTodo{
+    color:#4f416e ;
+    background-color:#e9e3f8;
+}
+.select{
+    display: inline-block;
+    width: 220px;
+    color:#544481 ;
+    /* background-color:#403161; */
     padding: 5px;
     margin-left: 10px;
 }

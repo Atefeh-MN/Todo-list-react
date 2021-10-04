@@ -1,0 +1,20 @@
+header{
+    display: flex;
+    align-items: center;
+}
+header .span{
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background-color: rgb(120, 108, 199);
+    color: rgb(223, 210, 235)
+
+}
+.select{
+    margin-left: 10px;
+}
