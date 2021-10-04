@@ -1,20 +1,16 @@
 
-import {BsTrash,BsCheck } from "react-icons/bs";
-import style from './todolist.module.css';
-const TodoList = (props) => {
-    const todolist=[...props.todos]
-    return ( 
-        <div>
-            <p>Todo List</p>
-            <ul>
-                {todolist.map((p)=>{return(
-                <li key={p.id}>
-                  <p className={style.todo}>{p.text}</p>
-                  <button className={style.button} ><BsCheck/></button>
-                  <button  className={style.button}><BsTrash/></button>
-                </li>)})}
-            </ul>
+import Todo from "./Todo";
+import './todolist.css'
+const TodoList = ({todos,onComplete,onRemove}) => {
+    const renderTodos=()=>{
+        if(todos.length===0)return<p>add some todos</p>;
+        return todos.map((todo)=>{return( <Todo key={todo.id} todo={todo} onRemove={()=>onRemove(todo.id)} onComplete={()=>onComplete(todo.id)}/>)})
+    };
 
+    
+    return ( 
+        <div className="todolist"> 
+           {renderTodos()}
         </div>
      );
 }
